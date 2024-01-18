@@ -1,0 +1,73 @@
+int math_pow(int n, int e)
+{
+    register int total = 1;
+
+    for (; e; e--) { total = n * total; }
+    return total;
+}
+
+//Matriz  de char.
+int numIntegrantes = 0;scanf ("%d", &numIntegrantes); numIntegrantes++;
+int i2, i = i2 = 0;
+char nomesFerro[numIntegrantes][100];
+size_t n = 0;
+while (n < numIntegrantes && fgets (nomesFerro[n], sizeof(*nomesFerro), stdin) != NULL ) ++n;
+puts(nomesFerro[1]);
+
+
+//matriz com malloc
+int **matriz = (int**)malloc(5 * (sizeof (int*))); 
+for (; i < 5; i++)
+{
+    matriz[i] = (int*)malloc(6 * sizeof(int)); //aqui 6 colunas.
+}
+
+//Comparador para usar o qsort;
+int comparador(const void *a, const void *b)
+{
+	return ( *(int*)a - *(int*)b );
+}
+
+//Inicialização de matriz de char.
+char opcoes[9][10] =
+{
+    {"rock"},
+    {"fire"},
+    {"scissors"},
+    {"human"},
+    {"sponge"},
+    {"paper"},
+    {"air"},
+    {"water"}
+};
+
+
+// função que retorna uma matriz;
+#include <stdio.h>
+#include <stdlib.h>
+
+int getSomapadrao(int somapadrao) { return somapadrao; }
+
+int ** getMatriz(int linhas, int colunas)
+{   
+    int **matriz;
+    for (int i = 0; i < linhas; i++) matriz[i] = (int*)malloc(linhas * colunas * sizeof(int));
+    return matriz;
+}
+
+int main ()
+{
+    int somaPadrao = 0;
+    int * a = *getMatriz(3, 3);
+    int * b = *getMatriz(4, 5);
+    *(a+8) = 12;
+    for (int i = 0; i < 9; i++) printf ("%d ", *(a + i));
+    printf ("\n");
+    *(b+19) = 15;
+    for (int i = 0; i < 20; i++) printf ("%d ", *(b+i));
+    free(a);
+    free(b);
+    int i = 0;
+}
+
+
